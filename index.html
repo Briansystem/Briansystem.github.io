@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>张研的个人博客</title>
+		<!-- <link rel="stylesheet" href="css/style.css"> -->
+		<style>
+			* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 微软雅黑, 宋体, Arial;
+	font-size: 14px;
+	color: #333333;
+	background: #f5f5f8;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+@font-face {
+	font-family: 'ziti';
+	src: url(../font/font.ttf);
+}
+
+.header {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: rgba(0, 0, 0, 0.3);
+	width: 80%;
+	padding: 15px 10%;
+}
+
+.logo {
+	font-family: ziti;
+}
+
+.logo h3 {
+	font-size: 22px;
+	letter-spacing: 2px;
+	color: #FFF;
+	font-weight: normal;
+}
+
+.nav a {
+	color: #FFF;
+	margin-left: 50px;
+	padding-bottom: 2px;
+	border-bottom: 2px solid transparent;
+}
+.nav .active{
+	border-bottom: 2px solid #FFF;
+}
+.nav a:hover{
+	border-bottom: 2px solid #FFF;
+}
+.banner img {
+	display: block;
+	width: 100%;
+	height: 320px;
+	object-fit: cover;
+}
+.title {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.title b {
+	font-size: 26px;
+	color: #fe6d00;
+	margin-right: 10px;
+}
+
+.title b span {
+	font-size: 20px;
+}
+
+.title h3 {
+	font-size: 20px;
+}
+
+.zhan {
+	width: 1160px;
+	padding: 20px;
+	margin: 30px auto;
+	border-radius: 15px;
+	background: #FFF;
+}
+
+.zhan ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.zhan ul li {
+	width: 23%;
+	margin: 10px 0;
+}
+
+.zhan ul li img {
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+	border: 1px solid #e1e1e1;
+	border-radius: 8px;
+}
+.zhan ul li video {
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+	border: 1px solid #e1e1e1;
+	border-radius: 8px;
+}
+.zhan ul li p {
+	margin: 5px 0;
+}
+
+.zhan ul li span {
+	font-size: 12px;
+	color: #999999;
+}
+
+.text {
+	display: flex;
+	justify-content: space-between;
+	width: 1200px;
+	margin: 30px auto;
+}
+
+.text-left {
+	width: 800px;
+	border-radius: 15px;
+	background: #FFF;
+	padding: 20px;
+}
+
+.text-right {
+	width: 300px;
+	border-radius: 15px;
+	background: #FFF;
+	padding: 20px;
+}
+
+.text-left-box {
+	display: flex;
+	justify-content: space-between;
+}
+
+.text-left-box img {
+	width: 350px;
+	height: 255px;
+	object-fit: cover;
+}
+
+.tl-text {
+	width: 430px;
+}
+
+.tl-text p {
+	line-height: 1.8;
+	text-indent: 2em;
+	margin: 3px 0;
+}
+
+.text-right ul li {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.text-right ul li:last-child {
+	margin-bottom: 0;
+}
+
+.text-right ul li b {
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	text-align: center;
+	background: #c0cbd6;
+	color: #FFF;
+	font-size: 12px;
+	border-radius: 3px;
+	margin-right: 10px;
+}
+
+.text-right ul li:nth-child(1) b {
+	background: #ff4800;
+}
+
+.text-right ul li:nth-child(2) b {
+	background: #00c7e4;
+}
+
+.text-right ul li:nth-child(3) b {
+	background: #409ae6;
+}
+
+.text-right ul li p {
+	width: 270px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+}
+
+.footer {
+	padding: 12px 0;
+	text-align: center;
+	color: #ccc;
+	background: #333945;
+}
+
+.link {
+	width: 1160px;
+	padding: 20px;
+	margin: 30px auto;
+	border-radius: 15px;
+	background: #FFF;
+}
+
+.link-box a {
+	color: #333333;
+	margin: 5px 20px 5px 0;
+	font-size: 15px;
+}
+
+.link-box a:hover {
+	color: #fe6d00;
+}
+
+.about {
+	width: 1160px;
+	margin: 30px auto;
+	padding: 20px;
+	background: #FFF;
+	border-radius: 15px;
+}
+
+.about p {
+	line-height: 1.6;
+	margin: 5px 0;
+	font-size: 16px;
+	text-indent: 2em;
+}
+
+.about img {
+	display: block;
+	max-width: 80%;
+	margin: 10px auto;
+}
+
+.page-title {
+	background: #f5f5f8;
+	padding: 10px 0;
+	border-radius: 8px;
+	margin-bottom: 20px;
+}
+.page-title h3{
+	position: relative;
+	font-size: 16px;
+	padding-left: 25px;
+}
+.page-title h3::before {
+	content: "";
+	display: block;
+	position: absolute;
+	background: #fe6d00;
+	height: 22px;
+	width: 7px;
+	border-radius: 4px;
+	top: 0;
+	left: 10px;
+}
+.new{
+	width: 1160px;
+	padding: 20px;
+	margin: 15px auto;
+	background: #FFF;
+	border-radius: 15px;
+}
+.new iframe{
+	width: 1150px;
+	height: 710px;
+	padding: 2px;
+	margin:2px auto;
+	border: 5px solid #f5821d;
+	border-radius: 15px;
+}
+.contact{
+	width: 1160px;
+	padding: 20px;
+	margin: 15px auto;
+	background: #FFF;
+	border-radius: 15px;
+}
+.contact-box label{
+	display: block;
+}
+.contact-box label input{
+	width: 260px;
+	height: 30px;
+	padding-left: 10px;
+	margin-bottom: 15px;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+}
+.contact-box label textarea{
+	width: 560px;
+	height: 80px;
+	padding: 10px;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+}
+.contact-box form>input{
+	cursor: pointer;
+	background: #00c7e4;
+	padding: 5px 20px;
+	margin-top: 15px;
+	border: none;
+	color: #FFF;
+}
+		</style>
+	</head>
+	<body>	
+		<div class="header">
+			<div class="logo">
+				<h3>张研的个人博客</h3>
+			</div>
+			<audio src="img/bgm.mp3" controls autoplay loop></audio>
+			<div class="nav">
+				<a class="active" href="index.html">首页</a>
+				<a href="about.html">关于我</a>
+				<a href="img.html">我的星铁小站</a>
+				<a href="news.html">我的课表</a>
+				<a href="contact.html">留言板</a>
+			</div>
+		</div>
+		<div class="banner">
+			<img src="img/banner.jpeg" alt="404">
+		</div>
+		<div class="text">
+			<div class="text-left">
+				<div class="title">
+					<b>A<span>bout</span></b>
+					<h3>个人介绍</h3>
+				</div>
+				<div class="text-left-box">
+					<img src="img/about2.jpg" alt="">
+					<div class="tl-text">
+						<p>欢迎来到我的博客！岁月不居，时节如流，相逢即是缘分。我是张研，是平平无奇的大学生一枚吖。</p>
+						<p>我来自安徽合肥，就读于宁夏大学软件工程专业，爱好是学习网页制作，如果你也和我有共同的兴趣，欢迎到留言板和我交换联系方式吧！我的qq号是123456789，欢迎来加，爱你。
+						</p>
+
+					</div>
+				</div>
+			</div>
+			<div class="text-right">
+				<div class="title">
+					<b>L<span>ife</span></b>
+					<h3>生活日记</h3>
+				</div>
+				<ul>
+					<li>
+						<b>1</b>
+						<p>今天学习了网页制作</p>
+					</li>
+					<li>
+						<b>2</b>
+						<p>日常赶早八</p>
+					</li>
+					<li>
+						<b>3</b>
+						<p>打球锻炼身体</p>
+					</li>
+					<li>
+						<b>4</b>
+						<p>吃火锅~</p>
+					</li>
+					<li>
+						<b>5</b>
+						<p>看了一本小说</p>
+					</li>
+					<li>
+						<b>6</b>
+						<p>跑闪动</p>
+					</li>
+					<li>
+						<b>7</b>
+						<p>关于电影的感悟</p>
+					</li>
+					<li>
+						<b>8</b>
+						<p>思考人生</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="zhan">
+			<div class="title">
+				<b>S<span>tar Rail</span></b>
+				<h3>我的星铁小站</h3>
+			</div>
+			<ul>
+				<li>
+					<img src="img/xt.jpg" alt="404">
+					<p>千星纪游</p>
+					<span>点赞数 999+</span>
+				</li>
+				<li>
+					<img src="img/kfk1.jpg" alt="404">
+					<p>耶佩拉叛乱</p>
+					<span>点赞数 999+</span>
+				</li>
+				<li>
+					<img src="img/kfk2.jpg" alt="404">
+					<p>戏剧性反讽</p>
+					<span>点赞数 999+</span>
+				</li>
+				<li>
+					<img src="img/jl.jpg" alt="404">
+					<p>云上五骁|镜流</p>
+					<span>点赞数 999+</span>
+				</li>
+				<li>
+					<a href="https://www.bilibili.com/video/BV12N4y1o7ET/?spm_id_from=333.337.search-card.all.click" target="_blank">
+						<video src="img/jingliu.mp4" controls loop autoplay muted poster="img/jl.jpg">404</video>
+						<p>云骑武经|说剑</p>
+					</a>
+					<span>点赞数 999+</span>
+				</li>
+				<li>
+					<a href="https://www.bilibili.com/video/BV1MN41187U6/?spm_id_from=333.999.0.0" target="_blank">
+						<video src="img/kafuka.mp4" controls loop autoplay muted poster="img/kfk1.jpg">404</video>
+						<p>星核猎手|卡芙卡</p>
+					</a>
+					<span>点赞数 999+</span>
+				</li>
+				<li>
+					<a href="https://www.bilibili.com/video/BV1Nu411H7C6/?spm_id_from=333.999.0.0https://www.bilibili.com/video/BV1Nu411H7C6/?spm_id_from=333.999.0.0" target="_blank">
+						<video src="img/47.mp4" controls loop autoplay muted poster="img/kfk2.jpg">404</video>
+						<p>耶佩拉叛乱：第47场</p>
+					</a>
+					<span>点赞数 999+</span>
+					
+				</li>
+				<li>
+					<a href="https://www.bilibili.com/video/BV1R94y1W7pL/?spm_id_from=333.999.0.0" target="_blank">
+						<video src="img/fx.mp4" controls loop autoplay muted poster="img/xt.jpg">404</video>
+						<p>法眼无遗</p>
+					</a>
+					<span>点赞数 999+</span>
+				</li>
+			</ul>
+		</div>
+		<div class="link">
+			<div class="title">
+				<b>L<span>ink</span></b>
+				<h3>学习链接</h3>
+			</div>
+			<div class="link-box">
+				<a href="http://210.27.229.198:8090/archives/1695180062412" target="_blank">课堂笔记(校园网访问)</a>
+				<a href="https://developer.mozilla.org/zh-CN/" target="_blank">MDN</a>
+				<a href="https://html-css-js.com/html/" target="_blank">htmltools</a>
+				<a href="https://htmltable.com/" target="_blank">table生成器</a>
+				<a href="https://www.runoob.com/css3/css3-tutorial.html" target="_blank">菜鸟教程</a>
+				<a href="https://www.csdn.net/" target="_blank">CSDN</a>
+				<a href="https://leetcode.cn/" target="_blank">LeetCode</a>
+			</div>
+		</div>
+		<div class="footer">
+			<p>copyRight © 张研的个人博客</p>
+		</div>
+	</body>
+</html>
